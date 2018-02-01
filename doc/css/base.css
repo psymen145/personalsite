@@ -1,0 +1,176 @@
+p, h1, h2, h3, h4, div, li {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar {
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar-choice {
+    color: black;
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.3s ease-in-out;
+    text-transform: uppercase;
+}
+
+.navbar-choice:hover {
+    color: #800080;
+    text-decoration: none;
+}
+
+.navbar-li:after {
+    display: block;
+    content: '';
+    border-bottom: 3px solid #800080;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar-li:hover:after {
+    transform: scaleX(1);
+}
+
+@media (max-width:768px) {
+    .navbar-li {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#profile {
+    text-align: center;
+    margin: 20px;
+}
+
+#profile > h2 {
+    font-weight: 900;
+}
+
+#profile-pic {
+    margin: 10px;
+}
+
+.line {
+    height: 1px;
+    background-color: black;
+    margin: auto;
+    display: block;
+    width: 5%;
+}
+
+.download {
+    background-color: #800080;
+    border-radius: 6px;
+    color: white;
+    padding: 12px;
+    border-bottom: 3px solid #4d004d;
+    display: inline-block;
+}
+
+.download:hover {
+    background-color: #660066;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s all;
+}
+
+#download-icon {
+    vertical-align: middle;
+}
+
+#about-container {
+    text-align: center;
+    padding: 0 5%;
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    #about-container {
+        padding: 0 20%;
+        margin: 110px 0;
+    }
+}
+
+#about-container > h3{
+    font-weight: 400;
+}
+
+.sub-container {
+    margin: 15px 0;
+}
+
+#exp-container {
+    text-align: center;
+    padding: 40px;
+    background-color: #add8e659;
+}
+
+.exp-box-left {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+    .exp-box-left {
+        text-align: right;
+    }
+}
+
+.exp-box-right {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.exp-description {
+    text-align: left;
+    font-size: 12px;
+}
+
+#edu-container {
+    text-align: center;
+    padding: 40px;
+    background-color: #ddd;
+}
+
+.edu {
+    padding: 20px;
+}
+
+#footer {
+    background: #1b1b1b;
+    padding: 10px 0;
+}
+
+#footer ul {
+    list-style: none;
+    text-align: center
+}
+
+.footer-items {
+    display: inline-block;
+}
+
+.footer-items a {
+    border: 2px solid #616161;
+    border-radius: 50%;
+    display: inline-block;
+    letter-spacing: normal;
+    text-align: center;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.footer-items a i {
+    padding-top: .1rem;
+    color: white;
+}
+
+.footer-items a i:hover {
+    color: #800080;
+}
