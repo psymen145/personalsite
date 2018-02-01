@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Simon's personal website</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="aboutme/css/base.css">
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <!-- Font Awesome Icons -->
+        <script src="https://use.fontawesome.com/85434796f1.js"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113197439-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-113197439-1');
+        </script>
+    </head>
+    <body>
+        <div class="navbar navbar-expand-md navbar-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#top-nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="top-nav">
+                <ul class="navbar-nav">
+                    <li class="navbar-li">
+                        <a href="#About" class="navbar-choice">About Me</a>
+                    </li>
+                    <li class="navbar-li">
+                        <a href="#Experience" class="navbar-choice">Experience</a>
+                    </li>
+                    <li class="navbar-li">
+                        <a href="#Education" class="navbar-choice">Education</a>
+                    </li>
+                    <li class="navbar-li">
+                        <a href="/blog/" class="navbar-choice">Blog</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div id="profile">
+                <img src="{% static 'aboutme/img/photo.png' %}" id="profile-pic" alt="picture of simon">
+                <h2>Simon Liu</h2>
+                <small> sim.liu92@gmail.com </small> <br>
+                <small> seeking software developer position! </small>
+            </div>
+            <div id="about-container">
+                <h4>About me</h4>
+                <span class="line"></span>
+                <div class="sub-container"> 
+                    <p>Currently working at the Department of Health and Mental Hygiene. My title is a database analyst but the majority of my time, I spend working with python. I spend alot of time manipulating data, performing queries and creating a front end for our unit's legacy SQL Server. While working full time, I am also attending Brooklyn college for my master's degree in computer science.
+                    </p>
+                    <a href="aboutme/misc/SimonLiuResume.pdf" class="download" download>
+                        <i class="fa fa-download" aria-hidden="true"></i>
+                        DOWNLOAD RESUME
+                    </a>
+                </div>
+            </div>
+            <div id="exp-container">
+                <h4>Experience</h4>
+                <span class="line"></span>
+                <div class="sub-container">
+                    <div class="row">
+                        <div class="col-sm-6 exp-box-left">
+                            <h6>Department of Health and Mental Hygiene</h6>
+                            <small> Database Analyst / Python Developer </small> <br>
+                            <small> January 2017 - Present </small>
+                        </div>
+                        <div class="col-sm-6 exp-box-right">
+                            <ul class="exp-description">
+                                <li>Developed an intranet web application using a Django back end and a legacy SQL Server</li>
+                                <li>Developed a responsive and dynamic front end application with bootstrap, AJAX calls and Django’s ORM</li>
+                                <li>Created programs with Python that connected to PubMed’s API via their API wrapper and migrated the JSON and XML data to SQL Server.</li>
+                                <li>Utilize SSIS for ETL tasks required for the SQL Server database</li>
+                                <li>Created python scripts with pandas, pyodbc and numpy for various textual analysis and ETL tasks.</li>
+                                <li>Query, generate reports and maintain existing Access DB</li>
+                                <li>Created stored procedures to import SurveyMonkey’s CSV file into SQL Server</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 exp-box-left">
+                            <h6>New York City Health and Hospital</h6>
+                            <small> Desktop Support Analyst </small> <br>
+                            <small> January 2016 - December 2016 </small>
+                        </div>
+                        <div class="col-sm-6 exp-box-right">
+                            <ul class="exp-description">
+                                <li>Install and configure PCs + medical equipment for NYCHHC’s EPIC project</li>
+                                <li>Technical support using Window’s suite of tools such as Window’s active directory</li>
+                                <li>Asset management for hardware needing EPIC’s software installation/updates</li>
+                            </ul>
+                        </div>
+                    </div> 
+                    <div class="row">
+                        <div class="col-sm-6 exp-box-left">
+                            <h6>Enterprise Consulting Solutions</h6>
+                            <small> Medical Record Field Technician </small> <br>
+                            <small> July 2015 - December 2015 </small>
+                        </div>
+                        <div class="col-sm-6 exp-box-right">
+                            <ul class="exp-description">
+                                <li>Retrieval of medical records from EMR software such as EPIC and MDLand</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="edu-container">
+                <h4>Education</h4>
+                <span class="line"></span>
+                <div class="sub-container">
+                    <div class="edu">
+                        <h6>City of New York Brooklyn College</h6>
+                        <small><a href="http://www.brooklyn.cuny.edu/courses/acad/program_info.jsp?major=337&div=G&dept_code=22&dept_id=109#337">MA in Computer Science</a></small><br>
+                        <small>January 2016 - Present</small>
+                    </div>
+                    <div class="edu">
+                        <h6>Stony Brook University</h6>
+                        <small><a href="http://sb.cc.stonybrook.edu/bulletin/current/academicprograms/han/degreesandrequirements.php">BS in Health Sciences with specialization in Health Informatics</a></small><br>
+                        <small>August 2010 - May 2014</small>
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <ul>
+                    <li class="footer-items">
+                        <a href="https://github.com/psymen145">
+                            <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li class="footer-items">
+                        <a href="https://www.linkedin.com/in/simon-liu145">
+                            <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
