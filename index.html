@@ -1,151 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Simon's personal website</title>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="css/base.css">
-        <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-        <!-- Font Awesome Icons -->
-        <script src="https://use.fontawesome.com/85434796f1.js"></script>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113197439-1"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
 
-          gtag('config', 'UA-113197439-1');
-        </script>
-    </head>
-    <body>
-        <div class="navbar navbar-expand-md fixed-top navbar-light">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#top-nav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="top-nav">
-                <ul class="navbar-nav">
-                    <li class="navbar-li">
-                        <a href="#About" class="navbar-choice">About Me</a>
-                    </li>
-                    <li class="navbar-li">
-                        <a href="#Experience" class="navbar-choice">Experience</a>
-                    </li>
-                    <li class="navbar-li">
-                        <a href="#Education" class="navbar-choice">Education</a>
-                    </li>
-                    <li class="navbar-li">
-                        <a href="/blog/" class="navbar-choice">Blog</a>
-                    </li>
-                </ul>
-            </div>
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="Simon Liu Brooklyn College Computer Science Master's website" content="Simon Liu Brooklyn College Computer Science Master's website. This is my personal profile and resume. Actively seeking software developer/ web application developer position"">
+    <meta name="Simon Liu" content="">
+
+    <title>Simon's Personal Website</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="vendor/devicons/css/devicons.min.css" rel="stylesheet">
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/resume.min.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">
+        <span class="d-block d-lg-none"></span>
+        <span class="d-none d-lg-block">
+          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.png" alt="">
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#education">Education</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#awards">Projects</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid p-0">
+
+      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+        <div class="my-auto">
+          <h1 class="mb-0">Simon
+            <span class="text-primary">Liu</span>
+          </h1>
+          <div class="subheading mb-5">Brooklyn, NY · (646) 238-4547 ·
+            <a href="mailto:name@email.com">sim.liu92@gmail.com</a>
+          </div>
+          <p class="mb-5">I am a database analyst/python developer at New York City Health and Mental Hygiene. I am in my last year at Brooklyn College's Computer Science MA program.</p>
+          <ul class="list-inline list-social-icons mb-0">
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
         </div>
-        <div id="header">
-            <div id="profile">
-                <img src="img/photo.png" id="profile-pic" alt="picture of simon">
-                <h2>Simon Liu</h2>
-                <small> sim.liu92@gmail.com </small> <br>
-                <small> seeking software developer position! </small>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
+        <div class="my-auto">
+          <h2 class="mb-5">Experience</h2>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Database Analyst / Python Developer</h3>
+              <div class="subheading mb-3">NYC Department of Health and Mental Hygiene</div>
+              <p>Developed a new SQL Server database for Office of Vital Statistics. This database stores requests for Birth and Death Records. After completion, I created a Django front end for the SQL Server Database.</p>
             </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">January 2017 - Present</span>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Desktop Support Analyst</h3>
+              <div class="subheading mb-3">NYC Health and Hospitals</div>
+              <p>Travelled through the city to deploy hardware for NYC hospitals. Collaborated with different personnel from each hospital to meet required hardware specification for NYC's new EMR "EPIC"</p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">January 2016 - December 2016</span>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Medical Record Field Technician</h3>
+              <div class="subheading mb-3">Enterprise Consulting Solutions</div>
+              <p>Travelled to medical practices to retrieve medical records for United Health Care patients. Quality Control to determine which medical records are necessary for the medical record reviewers.</p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">July 2015 - December 2015</span>
+            </div>
+          </div>
+
         </div>
-        <div class="container-fluid">
-            <div id="about-container">
-                <h4>About me</h4>
-                <span class="line"></span>
-                <div class="sub-container"> 
-                    <p>Currently working at the Department of Health and Mental Hygiene. My title is a database analyst but the majority of my time, I spend working with python. I spend alot of time manipulating data, performing queries and creating a front end for our unit's legacy SQL Server. While working full time, I am also attending Brooklyn college for my master's degree in computer science.
-                    </p>
-                    <a href="misc/SimonLiuResume.pdf" class="download" download>
-                        <i class="fa fa-download" aria-hidden="true"></i>
-                        DOWNLOAD RESUME
-                    </a>
-                </div>
+
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
+        <div class="my-auto">
+          <h2 class="mb-5">Education</h2>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">City of New York Brooklyn College</h3>
+              <div class="subheading mb-3">Computer Science MA</div>
+              <p>GPA: 3.84</p>
             </div>
-            <div id="exp-container">
-                <h4>Experience</h4>
-                <span class="line"></span>
-                <div class="sub-container">
-                    <div class="row">
-                        <div class="col-sm-6 exp-box-left">
-                            <h6>Department of Health and Mental Hygiene</h6>
-                            <small> Database Analyst / Python Developer </small> <br>
-                            <small> January 2017 - Present </small>
-                        </div>
-                        <div class="col-sm-6 exp-box-right">
-                            <ul class="exp-description">
-                                <li>Developed an intranet web application using a Django back end and a legacy SQL Server</li>
-                                <li>Developed a responsive and dynamic front end application with bootstrap, AJAX calls and Django’s ORM</li>
-                                <li>Created programs with Python that connected to PubMed’s API via their API wrapper and migrated the JSON and XML data to SQL Server.</li>
-                                <li>Utilize SSIS for ETL tasks required for the SQL Server database</li>
-                                <li>Created python scripts with pandas, pyodbc and numpy for various textual analysis and ETL tasks.</li>
-                                <li>Query, generate reports and maintain existing Access DB</li>
-                                <li>Created stored procedures to import SurveyMonkey’s CSV file into SQL Server</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6 exp-box-left">
-                            <h6>New York City Health and Hospital</h6>
-                            <small> Desktop Support Analyst </small> <br>
-                            <small> January 2016 - December 2016 </small>
-                        </div>
-                        <div class="col-sm-6 exp-box-right">
-                            <ul class="exp-description">
-                                <li>Install and configure PCs + medical equipment for NYCHHC’s EPIC project</li>
-                                <li>Technical support using Window’s suite of tools such as Window’s active directory</li>
-                                <li>Asset management for hardware needing EPIC’s software installation/updates</li>
-                            </ul>
-                        </div>
-                    </div> 
-                    <div class="row">
-                        <div class="col-sm-6 exp-box-left">
-                            <h6>Enterprise Consulting Solutions</h6>
-                            <small> Medical Record Field Technician </small> <br>
-                            <small> July 2015 - December 2015 </small>
-                        </div>
-                        <div class="col-sm-6 exp-box-right">
-                            <ul class="exp-description">
-                                <li>Retrieval of medical records from EMR software such as EPIC and MDLand</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">January 2016 - Present</span>
             </div>
-            <div id="edu-container">
-                <h4>Education</h4>
-                <span class="line"></span>
-                <div class="sub-container">
-                    <div class="edu">
-                        <h6>City of New York Brooklyn College</h6>
-                        <small><a href="http://www.brooklyn.cuny.edu/courses/acad/program_info.jsp?major=337&div=G&dept_code=22&dept_id=109#337">MA in Computer Science</a></small><br>
-                        <small>January 2016 - Present</small>
-                    </div>
-                    <div class="edu">
-                        <h6>Stony Brook University</h6>
-                        <small><a href="http://sb.cc.stonybrook.edu/bulletin/current/academicprograms/han/degreesandrequirements.php">BS in Health Sciences with specialization in Health Informatics</a></small><br>
-                        <small>August 2010 - May 2014</small>
-                    </div>
-                </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Stony Brook University</h3>
+              <div class="subheading mb-3">Health Sciences Bachelors of Science</div>
+              <p>GPA: 3.2</p>
             </div>
-            <div id="footer">
-                <ul>
-                    <li class="footer-items">
-                        <a href="https://github.com/psymen145">
-                            <i class="fa fa-github fa-2x" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li class="footer-items">
-                        <a href="https://www.linkedin.com/in/simon-liu145">
-                            <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                </ul>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">August 2010 - May 2014</span>
             </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Learning Tree</h3>
+              <div class="subheading mb-3">Introduction to Python</div>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">August 2017</span>
+            </div>
+          </div>
+
         </div>
-    </body>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
+        <div class="my-auto">
+          <h2 class="mb-5">Skills</h2>
+
+          <div class="subheading mb-3">Programming Languages &amp; Tools</div>
+          <ul class="list-group list-group-flush list-icons">
+            <li class="list-group-item border-0">
+              <i class="devicons devicons-python"></i>
+              Python 3: I use it regularly for data processing, back end developing, data analysis, scripting. This is my primary language after focusing on C++ in university. I still have alot to learn though!
+            </li>
+            <li class="list-group-item border-0">
+              <i class="devicons devicons-django"></i>
+              Django and Django Rest Framework: My go to back end framework. Started out with Django and made semi restful endpoints. Then I discovered rest and Django Rest Framework. Incorporating DRF for my projects in the future.
+            </li>
+            <li class="list-group-item border-0">
+              <i class="devicons devicons-react"></i>
+              ReactJS: My current projects are being built with this. Using this as my front end for my Django Rest Framework back ends. Relatively new to this but will get better with experience! Still have lots about webpack and nodejs. Currently using the 'create-react-app' to handle alot of my build configuration. 
+            </li>
+            <li class="list-group-ite border-0">
+              <i class="devicons devicons-postgresql"></i>
+              Postgres: Used this for my database class. Will also be my database of choice for my projects. I use SQL Server with a management studio GUI. Transitioning to Postgres right now and still have much more to learn dealing with a database on the command line. 
+            </li>
+            <li class="list-group-item border-0">
+              <i class="devicons devicons-msql_server"></i>
+              Microsoft SQL Server:
+            </li>
+            <li class="list-group-item border-0">
+              <i class="devicons devicons-javascript"></i>
+            </li>
+            <li class="list-group-item border-0">
+              <i class="devicons devicons-jquery"></i>
+            </li>
+            <li class="list-group-item border-0">
+              <i class="devicons devicons-linux"></i>
+            </li>
+            <li class="list-group-item border-0">
+              <i class="devicons devicons-bootstrap"></i>
+              Bootstrap 4: This template is built with bootstrap! Currently using a template but previous personal site was built with bootstrap 3 with no template. This template by 'BlackrockDigital' is too nice to pass on! Saves everyone a bunch of time.
+            </li>
+          </ul>
+
+          <div class="subheading mb-3">Other</div>
+          <ul class="fa-ul mb-0">
+            <li>
+              <i class="fa-li fa fa-angle-double-right"></i>
+              C++</li>
+            <li>
+              <i class="fa-li fa fa-angle-double-right"></i>
+              Systems Programming with C</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
+        <div class="my-auto">
+          <h2 class="mb-5">Interests</h2>
+          <p>Go Lakers!</p>
+          <p class="mb-0">Cryptocurrency, Learning, Video Games!</p>
+        </div>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
+        <div class="my-auto">
+          <h2 class="mb-5">Projects &amp; Certifications</h2>
+          <ul class="fa-ul mb-0">
+            <li>
+              <i class="fa-li fa fa-trophy text-warning"></i>
+              Learning Tree Introduction to Python</li>
+            <li>
+              <i class="fa-li fa fa-trophy text-warning"></i>
+              Database Manager in Stony Brook Senior Year Course</li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/resume.min.js"></script>
+
+  </body>
+
 </html>
