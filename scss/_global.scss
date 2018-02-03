@@ -53,8 +53,8 @@ h2 {
 }
 
 .list-icons {
-  font-size: 2rem;
-  .list-group-item i {
+  font-size: 3rem;
+  .list-inline-item {
     &:hover {
       color: $primary;
     }

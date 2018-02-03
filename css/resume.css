@@ -39,8 +39,8 @@ h2 {
     font-size: 1.75rem; }
 
 .list-icons {
-  font-size: 2rem; }
-  .list-icons .list-group-item i:hover {
+  font-size: 3rem; }
+  .list-icons .list-inline-item:hover {
     color: #8564c1; }
 
 #sideNav .navbar-nav .nav-item .nav-link {
