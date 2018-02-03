@@ -6,6 +6,19 @@
   color: $primary !important;
 }
 
+.btn-primary {
+  @include heading_font;
+  background-color: $primary !important;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  border: 0;
+  &:focus {
+    box-shadow: none !important;
+    color: $white;
+  }
+}
+
 a {
   color: $primary;
   &:hover,

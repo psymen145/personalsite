@@ -100,6 +100,17 @@ section.resume-section {
 .text-primary {
   color: #8564c1 !important; }
 
+.btn-primary {
+  font-family: 'Saira Extra Condensed', serif;
+  background-color: #8564c1 !important;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  border: 0; }
+  .btn-primary:focus {
+    box-shadow: none !important;
+    color: #fff; }
+
 a {
   color: #8564c1; }
   a:hover, a:focus, a:active {
