@@ -1,269 +1,561 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simon Liu · The Brownstone</title>
+  <meta name="description" content="Simon Liu — database analyst and Python developer in Brooklyn, NY. Step inside the brownstone and explore each room to learn more.">
+  <meta name="theme-color" content="#141c3a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="css/brownstone.css" rel="stylesheet">
+</head>
+<body data-scene="street">
+  <a class="skip-link" href="classic.html">Skip the tour: view the plain resume</a>
 
-  <head>
+  <!-- ============ STREET ============ -->
+  <section id="street" class="scene" aria-label="Outside the brownstone">
+    <svg id="street-svg" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMax slice" aria-hidden="false" role="img" aria-labelledby="street-title">
+      <title id="street-title">A Brooklyn brownstone at dusk</title>
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#0f1530"/>
+          <stop offset=".55" stop-color="#2f3466"/>
+          <stop offset=".85" stop-color="#9a5a6a"/>
+          <stop offset="1" stop-color="#e48f63"/>
+        </linearGradient>
+        <linearGradient id="glow" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#ffe6ad"/>
+          <stop offset="1" stop-color="#f3a84b"/>
+        </linearGradient>
+        <radialGradient id="halo">
+          <stop offset="0" stop-color="#ffd98a" stop-opacity=".55"/>
+          <stop offset="1" stop-color="#ffd98a" stop-opacity="0"/>
+        </radialGradient>
+        <pattern id="stone" width="40" height="14" patternUnits="userSpaceOnUse">
+          <rect width="40" height="14" fill="#7b4a33"/>
+          <path d="M0 13.5H40" stroke="#6b3f2b"/>
+        </pattern>
+        <pattern id="brick" width="24" height="12" patternUnits="userSpaceOnUse">
+          <rect width="24" height="12" fill="#6e3428"/>
+          <path d="M0 .5H24M0 6.5H24M6 0V6M18 6V12" stroke="#55261c"/>
+        </pattern>
+      </defs>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="Simon Liu Brooklyn College Computer Science Master's website" content="Simon Liu Brooklyn College Computer Science Master's website. This is my personal profile and resume. Actively seeking software developer/ web application developer position"">
-    <meta name="Simon Liu" content="">
+      <rect width="1200" height="900" fill="url(#sky)"/>
+      <g id="stars" fill="#fff"></g>
+      <circle cx="1105" cy="232" r="20" fill="#f6efd9"/>
+      <circle cx="1113" cy="226" r="18" fill="#1b2146"/>
 
-    <title>Simon's Personal Website</title>
+      <!-- neighbours -->
+      <g id="neighbours">
+        <rect x="0" y="290" width="200" height="560" fill="url(#brick)"/>
+        <rect x="-4" y="280" width="208" height="14" fill="#2b1712"/>
+        <rect x="200" y="320" width="210" height="530" fill="#5e3a2a"/>
+        <rect x="196" y="310" width="218" height="14" fill="#2f1c13"/>
+        <rect x="790" y="300" width="220" height="550" fill="url(#brick)"/>
+        <rect x="786" y="290" width="228" height="14" fill="#2b1712"/>
+        <rect x="1010" y="268" width="190" height="582" fill="#4f3a33"/>
+        <rect x="1006" y="258" width="198" height="14" fill="#271b17"/>
+        <g id="neighbour-windows"></g>
+        <rect x="0" y="0" width="1200" height="900" fill="#0d1022" opacity=".28" pointer-events="none"/>
+      </g>
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <!-- the brownstone -->
+      <g id="brownstone">
+        <rect x="410" y="250" width="380" height="590" fill="url(#stone)"/>
+        <!-- cornice -->
+        <rect x="398" y="234" width="404" height="20" fill="#3e2418"/>
+        <rect x="404" y="254" width="392" height="8" fill="#4b2b1d"/>
+        <g id="dentils" fill="#3e2418"></g>
+        <rect x="410" y="404" width="380" height="6" fill="#68402c"/>
+        <rect x="410" y="690" width="380" height="8" fill="#5d3523"/>
+        <g id="facade-windows"></g>
 
-    <!-- Custom fonts for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="vendor/devicons/css/devicons.min.css" rel="stylesheet">
-    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+        <!-- doorway -->
+        <rect x="425" y="532" width="90" height="12" fill="#4b2a1b"/>
+        <rect x="422" y="526" width="96" height="7" fill="#3e2418"/>
+        <rect x="427" y="544" width="8" height="18" fill="#4b2a1b"/>
+        <rect x="505" y="544" width="8" height="18" fill="#4b2a1b"/>
+        <rect x="437" y="548" width="66" height="127" fill="#2a1a12"/>
+        <rect x="441" y="552" width="58" height="17" fill="url(#glow)"/>
+        <text x="470" y="565" text-anchor="middle" class="house-number">145</text>
 
-    <!-- Custom styles for this template -->
-    <link href="css/resume.min.css" rel="stylesheet">
+        <g id="front-door" class="door" role="button" tabindex="0" aria-label="Open the front door and step inside">
+          <rect id="door-light" x="441" y="572" width="58" height="103" fill="#ffd98f"/>
+          <g class="door-leaf door-leaf--left">
+            <rect x="441" y="572" width="29" height="103" fill="#24463a"/>
+            <rect x="445" y="578" width="21" height="38" fill="none" stroke="#3b6a57" stroke-width="2"/>
+            <rect x="445" y="624" width="21" height="44" fill="none" stroke="#3b6a57" stroke-width="2"/>
+            <circle cx="466" cy="622" r="2.2" fill="#d9b45a"/>
+          </g>
+          <g class="door-leaf door-leaf--right">
+            <rect x="470" y="572" width="29" height="103" fill="#24463a"/>
+            <rect x="474" y="578" width="21" height="38" fill="none" stroke="#3b6a57" stroke-width="2"/>
+            <rect x="474" y="624" width="21" height="44" fill="none" stroke="#3b6a57" stroke-width="2"/>
+            <circle cx="474" cy="622" r="2.2" fill="#d9b45a"/>
+          </g>
+          <rect class="door-hit" x="437" y="548" width="66" height="127" fill="transparent"/>
+        </g>
 
-  </head>
+        <!-- stoop -->
+        <g id="stoop"></g>
+        <g fill="none" stroke="#141010" stroke-width="3">
+          <path d="M424 650 L408 806"/>
+          <path d="M516 650 L532 806"/>
+        </g>
+        <g id="balusters" stroke="#141010" stroke-width="1.5"></g>
+        <rect x="400" y="804" width="14" height="30" fill="#141010"/>
+        <circle cx="407" cy="801" r="6" fill="#141010"/>
+        <rect x="526" y="804" width="14" height="30" fill="#141010"/>
+        <circle cx="533" cy="801" r="6" fill="#141010"/>
 
-  <body id="page-top">
+        <!-- areaway fence -->
+        <g id="fence" stroke="#141010" stroke-width="2.5"></g>
+      </g>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <span class="d-block d-lg-none"></span>
-        <span class="d-none d-lg-block">
-          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.png" alt="">
-        </span>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <!-- street -->
+      <rect x="0" y="832" width="1200" height="40" fill="#7d7a76"/>
+      <g id="sidewalk-seams" stroke="#6a6763"></g>
+      <rect x="0" y="872" width="1200" height="6" fill="#a9a5a0"/>
+      <rect x="0" y="878" width="1200" height="22" fill="#26262c"/>
+
+      <!-- lamp -->
+      <circle cx="330" cy="624" r="110" fill="url(#halo)"/>
+      <rect x="327" y="640" width="6" height="232" fill="#1b1b1b"/>
+      <rect x="321" y="862" width="18" height="10" fill="#1b1b1b"/>
+      <path d="M316 640 H344 L340 606 H320 Z" fill="url(#glow)" stroke="#1b1b1b" stroke-width="3"/>
+      <path d="M314 606 H346 L330 594 Z" fill="#1b1b1b"/>
+
+      <!-- tree -->
+      <rect x="880" y="868" width="50" height="6" fill="#4a3a2c"/>
+      <rect x="898" y="690" width="14" height="182" fill="#3b2a1e"/>
+      <g fill="#2d4a2f">
+        <circle cx="905" cy="640" r="68"/>
+        <circle cx="855" cy="680" r="48"/>
+        <circle cx="955" cy="676" r="52"/>
+      </g>
+      <g fill="#375a38">
+        <circle cx="900" cy="602" r="48"/>
+        <circle cx="940" cy="640" r="34"/>
+        <circle cx="868" cy="650" r="30"/>
+      </g>
+    </svg>
+
+    <header class="street-title">
+      <p class="eyebrow">Brooklyn, New York</p>
+      <h1>Simon Liu</h1>
+      <p class="tagline">Database analyst &amp; Python developer</p>
+    </header>
+
+    <button class="enter-hint" type="button" id="enter-hint">
+      <span class="pulse" aria-hidden="true"></span>
+      Knock knock: click the green door to come in
+    </button>
+  </section>
+
+  <!-- ============ INSIDE ============ -->
+  <section id="inside" class="scene" aria-label="Inside the brownstone">
+    <header class="topbar">
+      <button type="button" class="btn-ghost" id="exit-btn" aria-label="Go back outside">
+        <span aria-hidden="true">←</span> Outside
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#education">Education</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#awards">Projects</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+      <p class="topbar-title">Simon’s Brownstone</p>
+      <a class="btn-ghost" href="classic.html">Classic resume</a>
+    </header>
 
-    <div class="container-fluid p-0">
+    <div class="stage">
+      <svg id="house-svg" viewBox="0 0 800 1040" preserveAspectRatio="xMidYMid meet" role="group" aria-label="Cutaway of the brownstone. Choose a room.">
+        <defs>
+          <linearGradient id="night" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#0c1129"/>
+            <stop offset=".25" stop-color="#1d2350"/>
+            <stop offset="1" stop-color="#151a33"/>
+          </linearGradient>
+          <linearGradient id="glow2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffe6ad"/>
+            <stop offset="1" stop-color="#f3a84b"/>
+          </linearGradient>
+          <radialGradient id="lampglow">
+            <stop offset="0" stop-color="#ffd98a" stop-opacity=".5"/>
+            <stop offset="1" stop-color="#ffd98a" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="fireglow">
+            <stop offset="0" stop-color="#ff9a3c" stop-opacity=".45"/>
+            <stop offset="1" stop-color="#ff9a3c" stop-opacity="0"/>
+          </radialGradient>
+          <pattern id="brick2" width="24" height="12" patternUnits="userSpaceOnUse">
+            <rect width="24" height="12" fill="#7a3b2a"/>
+            <path d="M0 .5H24M0 6.5H24M6 0V6M18 6V12" stroke="#5c2b1e"/>
+          </pattern>
+          <pattern id="pegs" width="12" height="12" patternUnits="userSpaceOnUse">
+            <rect width="12" height="12" fill="#c8a978"/>
+            <circle cx="6" cy="6" r="1.2" fill="#9c7f52"/>
+          </pattern>
+          <clipPath id="portrait-clip"><rect x="236" y="16" width="58" height="46"/></clipPath>
+        </defs>
 
-      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
-        <div class="my-auto">
-          <h1 class="mb-0">Simon
-            <span class="text-primary">Liu</span>
-          </h1>
-          <div class="subheading mb-5">Brooklyn, NY · (646) 238-4547 ·
-            <a href="mailto:sim.liu92@gmail.com">sim.liu92@gmail.com</a>
-          </div>
-          <p class="mb-5">I am a database analyst/python developer at New York City Health and Mental Hygiene. I am in my last year at Brooklyn College's Computer Science MA program.</p>
-          <ul class="list-inline list-social-icons mb-5">
-            <li class="list-inline-item">
-              <a href="#">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://www.linkedin.com/in/simon-liu145/">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-linkedin fa-stack-1x fa-inverse">
-                  </i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://github.com/psymen145">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-          </ul>
-          <div class="mb-5">
-            <a href="misc/SimonLiuResume.pdf" class="btn btn-primary btn-lg" role="button" download>
-              <i class="fa fa-download" aria-hidden="true"></i>
-              Download Resume
-            </a>
-          </div>
-        </div>
-      </section>
+        <rect x="-1200" y="-800" width="3200" height="1804" fill="url(#night)"/>
+        <g id="house-stars" fill="#fff"></g>
+        <circle cx="730" cy="22" r="14" fill="#f6efd9"/>
 
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
-        <div class="my-auto">
-          <h2 class="mb-5">Experience</h2>
+        <!-- neighbour silhouettes -->
+        <rect x="-900" y="200" width="940" height="804" fill="#191c30"/>
+        <rect x="760" y="170" width="940" height="834" fill="#171a2d"/>
+        <g id="house-neighbour-windows"></g>
+        <rect x="-1200" y="1004" width="3200" height="600" fill="#1c140e"/>
 
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Database Analyst / Python Developer</h3>
-              <div class="subheading mb-3">NYC Department of Health and Mental Hygiene</div>
-              <p>Developed a new SQL Server database for Office of Vital Statistics. This database stores requests for Birth and Death Records. After completion, I created a Django front end for the SQL Server Database.</p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">January 2017 - Present</span>
-            </div>
-          </div>
+        <!-- shell -->
+        <rect x="40" y="216" width="720" height="16" fill="#3e2418"/>
+        <rect x="50" y="200" width="20" height="804" fill="#6b3f2b"/>
+        <rect x="730" y="200" width="20" height="804" fill="#6b3f2b"/>
 
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Desktop Support Analyst</h3>
-              <div class="subheading mb-3">NYC Health and Hospitals</div>
-              <p>Travelled through the city to deploy hardware for NYC hospitals. Collaborated with different personnel from each hospital to meet required hardware specification for NYC's new EMR "EPIC"</p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">January 2016 - December 2016</span>
-            </div>
-          </div>
+        <!-- ROOFTOP · projects -->
+        <g class="room" data-room="projects" transform="translate(70 60)" tabindex="0" role="button" aria-label="Rooftop: projects">
+          <rect class="room-bg" width="660" height="170" fill="#000" opacity="0"/>
+          <rect y="150" width="660" height="20" fill="#4a4040"/>
+          <!-- water tower -->
+          <g>
+            <path d="M548 150 L556 96 M612 150 L604 96 M580 150 V96" stroke="#2b2421" stroke-width="5"/>
+            <path d="M552 124 H608" stroke="#2b2421" stroke-width="3"/>
+            <rect x="540" y="38" width="80" height="60" fill="#7a5638"/>
+            <path d="M540 52H620M540 68H620M540 84H620" stroke="#4d3423" stroke-width="2"/>
+            <path d="M534 40 L580 6 L626 40 Z" fill="#5a3e2a"/>
+          </g>
+          <!-- string lights -->
+          <path d="M10 40 V150 M440 40 V150" stroke="#2b2421" stroke-width="4"/>
+          <path d="M10 42 Q118 82 225 46 Q332 82 440 42" fill="none" stroke="#2b2421" stroke-width="1.5"/>
+          <g id="bulbs"></g>
+          <!-- lounge -->
+          <g fill="#c98a4b">
+            <rect x="150" y="104" width="12" height="40" rx="3" transform="rotate(-14 156 124)"/>
+            <rect x="150" y="124" width="46" height="8" rx="2"/>
+            <rect x="152" y="132" width="4" height="18"/><rect x="190" y="132" width="4" height="18"/>
+            <rect x="290" y="104" width="12" height="40" rx="3" transform="rotate(14 296 124)"/>
+            <rect x="254" y="124" width="46" height="8" rx="2"/>
+            <rect x="256" y="132" width="4" height="18"/><rect x="294" y="132" width="4" height="18"/>
+          </g>
+          <rect x="206" y="118" width="38" height="6" fill="#3a3030"/>
+          <rect x="223" y="124" width="4" height="26" fill="#3a3030"/>
+          <rect x="216" y="106" width="8" height="12" rx="2" fill="#e9e3d6"/>
+          <!-- telescope -->
+          <path d="M470 150 L484 112 L498 150 M484 112 V150" stroke="#2b2421" stroke-width="3" fill="none"/>
+          <rect x="468" y="96" width="56" height="12" rx="4" fill="#d6d2c8" transform="rotate(-32 484 104)"/>
+          <!-- plants -->
+          <path d="M40 150 L36 126 H64 L60 150 Z" fill="#9c5a3a"/>
+          <circle cx="50" cy="112" r="16" fill="#3f6b3d"/><circle cx="40" cy="120" r="10" fill="#4f804b"/>
+          <path d="M80 150 L77 134 H99 L96 150 Z" fill="#9c5a3a"/>
+          <path d="M88 134 C80 110 84 100 88 96 C92 104 96 112 88 134" fill="#4f804b"/>
+          <text x="330" y="163.5" class="plaque">ROOFTOP · PROJECTS</text>
+          <rect class="room-hit" width="660" height="170" rx="4"/>
+        </g>
+        <rect x="50" y="230" width="700" height="14" fill="#2a1810"/>
 
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Medical Record Field Technician</h3>
-              <div class="subheading mb-3">Enterprise Consulting Solutions</div>
-              <p>Travelled to medical practices to retrieve medical records for United Health Care patients. Quality Control to determine which medical records are necessary for the medical record reviewers.</p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">July 2015 - December 2015</span>
-            </div>
-          </div>
+        <!-- LIBRARY · education -->
+        <g class="room" data-room="education" transform="translate(70 244)" tabindex="0" role="button" aria-label="Library: education">
+          <rect class="room-bg" width="660" height="176" fill="#2f4a3c"/>
+          <rect y="160" width="660" height="16" fill="#4a3020"/>
+          <g transform="translate(16 10)">
+            <rect width="220" height="150" fill="#4b2e1a"/>
+            <rect x="6" y="6" width="208" height="138" fill="#24160d"/>
+            <g class="books" data-seed="7"></g>
+            <rect x="6" y="40" width="208" height="4" fill="#4b2e1a"/>
+            <rect x="6" y="76" width="208" height="4" fill="#4b2e1a"/>
+            <rect x="6" y="112" width="208" height="4" fill="#4b2e1a"/>
+          </g>
+          <g transform="translate(424 10)">
+            <rect width="220" height="150" fill="#4b2e1a"/>
+            <rect x="6" y="6" width="208" height="138" fill="#24160d"/>
+            <g class="books" data-seed="21"></g>
+            <rect x="6" y="40" width="208" height="4" fill="#4b2e1a"/>
+            <rect x="6" y="76" width="208" height="4" fill="#4b2e1a"/>
+            <rect x="6" y="112" width="208" height="4" fill="#4b2e1a"/>
+          </g>
+          <!-- diploma -->
+          <rect x="296" y="22" width="80" height="58" fill="#e9dfc6" stroke="#b08d57" stroke-width="4"/>
+          <path d="M310 38 H362 M312 48 H360 M318 58 H354" stroke="#8a7a5a" stroke-width="2"/>
+          <circle cx="352" cy="68" r="6" fill="#a8322d"/>
+          <!-- lamp -->
+          <circle cx="262" cy="70" r="60" fill="url(#lampglow)"/>
+          <path d="M262 70 V158" stroke="#1d1d1d" stroke-width="3"/>
+          <ellipse cx="262" cy="159" rx="12" ry="3" fill="#1d1d1d"/>
+          <path d="M248 52 H276 L282 72 H242 Z" fill="#f3d9a0"/>
+          <!-- armchair -->
+          <rect x="290" y="94" width="96" height="50" rx="14" fill="#7d2b2b"/>
+          <rect x="282" y="124" width="112" height="24" rx="8" fill="#a03a3a"/>
+          <rect x="278" y="112" width="18" height="36" rx="7" fill="#8f3333"/>
+          <rect x="380" y="112" width="18" height="36" rx="7" fill="#8f3333"/>
+          <rect x="288" y="148" width="5" height="12" fill="#2a1a10"/><rect x="384" y="148" width="5" height="12" fill="#2a1a10"/>
+          <rect x="320" y="118" width="22" height="6" rx="1" fill="#2d5b8a" transform="rotate(-8 331 121)"/>
+          <text x="330" y="171" class="plaque">LIBRARY · EDUCATION</text>
+          <rect class="room-hit" width="660" height="176" rx="4"/>
+        </g>
+        <rect x="50" y="420" width="700" height="14" fill="#2a1810"/>
 
-        </div>
+        <!-- STUDY · experience -->
+        <g class="room" data-room="experience" transform="translate(70 434)" tabindex="0" role="button" aria-label="Study: work experience">
+          <rect class="room-bg" width="660" height="176" fill="#2e4157"/>
+          <rect y="160" width="660" height="16" fill="#4a3020"/>
+          <!-- window with skyline -->
+          <rect x="26" y="18" width="150" height="108" fill="#1c1c1c"/>
+          <rect x="32" y="24" width="138" height="96" fill="#101a35"/>
+          <path d="M32 120 V88 H50 V70 H64 V92 H80 V60 H96 V96 H112 V78 H130 V100 H146 V66 H160 V120 Z" fill="#0a0f20"/>
+          <g fill="#ffd27a"><rect x="84" y="68" width="3" height="3"/><rect x="90" y="80" width="3" height="3"/><rect x="150" y="76" width="3" height="3"/><rect x="54" y="78" width="3" height="3"/><rect x="118" y="88" width="3" height="3"/></g>
+          <path d="M101 24 V120 M32 72 H170" stroke="#1c1c1c" stroke-width="4"/>
+          <rect x="20" y="126" width="162" height="6" fill="#d8d2c4"/>
+          <!-- frames -->
+          <rect x="214" y="22" width="34" height="26" fill="#d8d2c4" stroke="#1c1c1c" stroke-width="3"/>
+          <rect x="256" y="16" width="44" height="32" fill="#9fb8c9" stroke="#1c1c1c" stroke-width="3"/>
+          <rect x="308" y="24" width="30" height="24" fill="#e2c28a" stroke="#1c1c1c" stroke-width="3"/>
+          <!-- desk -->
+          <rect x="250" y="108" width="270" height="10" fill="#6b4428"/>
+          <rect x="258" y="118" width="8" height="42" fill="#5a3820"/>
+          <rect x="440" y="118" width="74" height="42" fill="#5a3820"/>
+          <path d="M446 138 H508" stroke="#3e2615" stroke-width="2"/>
+          <circle cx="477" cy="128" r="2" fill="#d9b45a"/><circle cx="477" cy="148" r="2" fill="#d9b45a"/>
+          <!-- monitor -->
+          <rect x="340" y="40" width="128" height="62" rx="4" fill="#111"/>
+          <rect x="346" y="46" width="116" height="50" fill="#0d2236"/>
+          <g class="code">
+            <rect x="352" y="52" width="30" height="3" fill="#c792ea"/><rect x="386" y="52" width="40" height="3" fill="#82aaff"/>
+            <rect x="358" y="60" width="54" height="3" fill="#c3e88d"/>
+            <rect x="358" y="68" width="22" height="3" fill="#f78c6c"/><rect x="384" y="68" width="38" height="3" fill="#89ddff"/>
+            <rect x="358" y="76" width="46" height="3" fill="#c3e88d"/>
+            <rect x="352" y="84" width="18" height="3" fill="#c792ea"/><rect class="cursor" x="374" y="83" width="5" height="5" fill="#e6e6e6"/>
+          </g>
+          <rect x="398" y="102" width="12" height="6" fill="#222"/>
+          <rect x="500" y="94" width="12" height="14" rx="2" fill="#e9e3d6"/>
+          <path d="M512 98 Q518 101 512 104" stroke="#e9e3d6" stroke-width="2" fill="none"/>
+          <!-- chair -->
+          <rect x="296" y="78" width="40" height="46" rx="8" fill="#1f2a36"/>
+          <rect x="290" y="124" width="58" height="9" rx="4" fill="#26333f"/>
+          <rect x="316" y="133" width="5" height="18" fill="#111"/>
+          <path d="M298 156 H340" stroke="#111" stroke-width="4" stroke-linecap="round"/>
+          <!-- cabinet + plant -->
+          <rect x="560" y="70" width="70" height="90" fill="#7c858f"/>
+          <path d="M560 100 H630 M560 130 H630" stroke="#5b636c" stroke-width="2"/>
+          <rect x="586" y="84" width="18" height="4" fill="#3a4047"/><rect x="586" y="113" width="18" height="4" fill="#3a4047"/><rect x="586" y="143" width="18" height="4" fill="#3a4047"/>
+          <path d="M582 70 L586 54 H604 L608 70 Z" fill="#9c5a3a"/>
+          <path d="M595 54 C580 30 588 20 592 16 M595 54 C604 34 612 30 616 26 M595 54 C590 40 572 40 568 36" stroke="#4f804b" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <!-- pendant -->
+          <path d="M404 0 V14" stroke="#111" stroke-width="2"/>
+          <path d="M394 14 H414 L418 24 H390 Z" fill="#1c1c1c"/>
+          <circle cx="404" cy="26" r="4" fill="#ffe6ad"/>
+          <text x="330" y="171" class="plaque">STUDY · EXPERIENCE</text>
+          <rect class="room-hit" width="660" height="176" rx="4"/>
+        </g>
+        <rect x="50" y="610" width="700" height="14" fill="#2a1810"/>
 
-      </section>
+        <!-- PARLOR · about -->
+        <g class="room" data-room="about" transform="translate(70 624)" tabindex="0" role="button" aria-label="Parlor: about me and contact">
+          <rect class="room-bg" width="660" height="176" fill="#5a3446"/>
+          <rect y="108" width="660" height="52" fill="#4a2a39"/>
+          <path d="M0 108 H660" stroke="#6e4559" stroke-width="3"/>
+          <rect y="160" width="660" height="16" fill="#4a3020"/>
+          <ellipse cx="300" cy="166" rx="190" ry="7" fill="#8a3d36"/>
+          <!-- fireplace -->
+          <circle cx="265" cy="130" r="90" fill="url(#fireglow)"/>
+          <rect x="196" y="72" width="138" height="8" fill="#eee7da"/>
+          <rect x="206" y="80" width="118" height="80" fill="#d9d0c0"/>
+          <path d="M234 160 V114 Q265 92 296 114 V160 Z" fill="#170d08"/>
+          <g class="flames">
+            <path class="flame" d="M250 156 C246 140 256 132 254 120 C264 130 270 140 266 156 Z" fill="#f08a2c"/>
+            <path class="flame f2" d="M262 156 C258 136 270 128 270 112 C282 126 284 142 278 156 Z" fill="#f6b13a"/>
+            <path class="flame f3" d="M256 156 C256 146 262 140 264 132 C270 142 272 150 270 156 Z" fill="#ffe08a"/>
+          </g>
+          <rect x="240" y="154" width="50" height="5" fill="#2b2b2b"/>
+          <!-- portrait -->
+          <rect x="230" y="10" width="70" height="58" fill="#c9a24a"/>
+          <rect x="236" y="16" width="58" height="46" fill="#2a1a12"/>
+          <image href="img/profile.png" x="236" y="10" width="58" height="58" preserveAspectRatio="xMidYMid slice" clip-path="url(#portrait-clip)"/>
+          <!-- sofa -->
+          <rect x="24" y="96" width="160" height="40" rx="12" fill="#2f5d62"/>
+          <rect x="18" y="122" width="172" height="28" rx="8" fill="#3a7177"/>
+          <rect x="12" y="108" width="20" height="42" rx="8" fill="#336a70"/>
+          <rect x="176" y="108" width="20" height="42" rx="8" fill="#336a70"/>
+          <rect x="22" y="150" width="6" height="10" fill="#2a1a10"/><rect x="180" y="150" width="6" height="10" fill="#2a1a10"/>
+          <rect x="44" y="104" width="30" height="22" rx="6" fill="#e2c28a" transform="rotate(-10 59 115)"/>
+          <!-- tall window -->
+          <rect x="398" y="10" width="96" height="146" fill="#1c1c1c"/>
+          <rect x="404" y="16" width="84" height="134" fill="#141c3a"/>
+          <path d="M446 16 V150 M404 82 H488" stroke="#1c1c1c" stroke-width="4"/>
+          <path d="M392 6 H500" stroke="#c9a24a" stroke-width="4"/>
+          <path d="M392 8 Q404 80 398 158 L388 158 Q392 80 386 8 Z" fill="#7d2b2b"/>
+          <path d="M500 8 Q488 80 494 158 L504 158 Q500 80 506 8 Z" fill="#7d2b2b"/>
+          <!-- side table + plant -->
+          <rect x="556" y="112" width="60" height="6" fill="#6b4428"/>
+          <rect x="582" y="118" width="6" height="42" fill="#6b4428"/>
+          <path d="M574 112 L577 96 H595 L598 112 Z" fill="#e9e3d6"/>
+          <path d="M586 96 C570 70 578 58 582 52 M586 96 C598 70 606 66 612 62 M586 96 C584 76 594 60 596 50" stroke="#4f804b" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <!-- chandelier -->
+          <path d="M320 0 V10" stroke="#c9a24a" stroke-width="2"/>
+          <path d="M306 14 Q320 24 334 14" stroke="#c9a24a" stroke-width="3" fill="none"/>
+          <circle cx="306" cy="12" r="3" fill="#ffe6ad"/><circle cx="320" cy="20" r="3" fill="#ffe6ad"/><circle cx="334" cy="12" r="3" fill="#ffe6ad"/>
+          <text x="330" y="171" class="plaque">PARLOR · ABOUT ME</text>
+          <rect class="room-hit" width="660" height="176" rx="4"/>
+        </g>
+        <rect x="50" y="800" width="700" height="14" fill="#2a1810"/>
 
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
-        <div class="my-auto">
-          <h2 class="mb-5">Education</h2>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">City of New York Brooklyn College</h3>
-              <div class="subheading mb-3">Computer Science MA</div>
-              <p>GPA: 3.84</p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">January 2016 - Present</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Stony Brook University</h3>
-              <div class="subheading mb-3">Health Sciences Bachelors of Science</div>
-              <p>GPA: 3.2</p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">August 2010 - May 2014</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Learning Tree</h3>
-              <div class="subheading mb-3">Introduction to Python</div>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">August 2017</span>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
-        <div class="my-auto">
-          <h2 class="mb-5">Skills</h2>
-
-          <div class="subheading mb-3">Programming Languages &amp; Tools</div>
-          <ul class="list-inline list-icons">
-            <li class="list-inline-item">
-              <i class="devicons devicons-python" title="python"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-django" title="django"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-react" title="reactjs"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-postgresql" title="postgres"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-msql_server" title="microsoft sql server"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-javascript" title="javascript"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-jquery" title="jquery"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-linux" title="linux"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-bootstrap" title="bootstrap"></i>
-            </li>
-          </ul>
-
-          <div class="subheading mb-3">Others</div>
-          <ul class="fa-ul mb-0">
-            <li>
-              <i class="fa-li fa fa-angle-double-right"></i>
-              C++</li>
-            <li>
-              <i class="fa-li fa fa-angle-double-right"></i>
-              Systems Programming with C</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
-        <div class="my-auto">
-          <h2 class="mb-5">Projects &amp; Certifications</h2>
-          <ul class="fa-ul mb-0">
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              Learning Tree Introduction to Python</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              Database Manager in Stony Brook Senior Year Course</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              Cryptocurrency site: www.ethmember.com</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              BLS Certified</li>
-          </ul>
-        </div>
-      </section>
-
+        <!-- WORKSHOP · skills -->
+        <g class="room" data-room="skills" transform="translate(70 814)" tabindex="0" role="button" aria-label="Workshop: skills">
+          <rect class="room-bg" width="660" height="176" fill="url(#brick2)"/>
+          <rect y="160" width="660" height="16" fill="#3d3a38"/>
+          <!-- pegboard -->
+          <rect x="26" y="14" width="236" height="84" fill="url(#pegs)" stroke="#8b6a3e" stroke-width="3"/>
+          <g fill="#3b3f46">
+            <path d="M48 28 h8 v40 h-8z M42 22 h20 l-4 8 h-12z"/>
+            <path d="M80 26 h22 v10 h-7 v42 h-8 v-42 h-7z"/>
+            <path d="M124 24 a8 8 0 1 1 0 16 v38 h-6 v-38 a8 8 0 1 1 0 -16 v8 h6z"/>
+            <path d="M150 30 h50 l-6 26 h-38z"/>
+            <path d="M216 24 h6 v26 h4 v28 h-14 v-28 h4z"/>
+          </g>
+          <path d="M156 38 H192" stroke="#c8a978" stroke-width="2" stroke-dasharray="3 3"/>
+          <!-- workbench -->
+          <rect x="16" y="110" width="290" height="10" fill="#8b5a2b"/>
+          <rect x="24" y="120" width="8" height="40" fill="#6b4422"/><rect x="290" y="120" width="8" height="40" fill="#6b4422"/>
+          <rect x="24" y="146" width="274" height="5" fill="#6b4422"/>
+          <rect x="40" y="96" width="24" height="14" fill="#4a4f57"/><rect x="34" y="92" width="36" height="6" fill="#5b616a"/>
+          <!-- laptop -->
+          <path d="M170 110 L180 76 H246 L236 110 Z" fill="#2b2f36"/>
+          <path d="M176 106 L184 80 H240 L232 106 Z" fill="#1e3a4f"/>
+          <path d="M190 90 H214 M188 97 H226" stroke="#7fd1b9" stroke-width="2.5"/>
+          <rect x="160" y="108" width="90" height="4" fill="#4a4f57"/>
+          <!-- bulb -->
+          <path d="M380 0 V40" stroke="#111" stroke-width="2"/>
+          <circle cx="380" cy="46" r="40" fill="url(#lampglow)"/>
+          <circle cx="380" cy="46" r="7" fill="#ffe6ad"/>
+          <!-- bike -->
+          <g stroke="#cfd4da" stroke-width="3" fill="none">
+            <circle cx="350" cy="132" r="20"/><circle cx="420" cy="132" r="20"/>
+            <path d="M350 132 L372 102 H406 L420 132 M372 102 L386 132 L406 102 M386 132 H350 M402 94 L406 102 M366 96 H378"/>
+          </g>
+          <!-- server rack -->
+          <rect x="510" y="18" width="110" height="142" rx="4" fill="#1d1f24"/>
+          <g id="rack" ></g>
+          <text x="330" y="171" class="plaque">WORKSHOP · SKILLS</text>
+          <rect class="room-hit" width="660" height="176" rx="4"/>
+        </g>
+        <rect x="50" y="990" width="700" height="14" fill="#2a1810"/>
+      </svg>
     </div>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <nav class="room-nav" aria-label="Rooms">
+      <button type="button" data-go="projects">Rooftop</button>
+      <button type="button" data-go="education">Library</button>
+      <button type="button" data-go="experience">Study</button>
+      <button type="button" data-go="about">Parlor</button>
+      <button type="button" data-go="skills">Workshop</button>
+    </nav>
 
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <p class="inside-hint" id="inside-hint">Welcome in. Pick a room to step inside.</p>
+    <div class="tooltip" id="tooltip" aria-hidden="true"></div>
 
-    <!-- Custom scripts for this template -->
-    <script src="js/resume.min.js"></script>
+    <!-- ============ ROOM PANEL ============ -->
+    <aside id="panel" class="panel" aria-label="Room details">
+      <div class="panel-head">
+        <button type="button" class="btn-ghost" data-stairs="up"></button>
+        <button type="button" class="panel-close" id="panel-close" aria-label="Close room">×</button>
+      </div>
 
-  </body>
+      <article data-room="about" hidden>
+        <p class="eyebrow">Parlor floor</p>
+        <h2 tabindex="-1">Hi, I’m Simon.</h2>
+        <p class="lede">Database analyst and Python developer, based in Brooklyn.</p>
+        <p>I am a database analyst/python developer at New York City Health and Mental Hygiene. I am in my last year at Brooklyn College’s Computer Science MA program.</p>
+        <h3>Say hello</h3>
+        <ul class="contact">
+          <li><a href="mailto:sim.liu92@gmail.com">sim.liu92@gmail.com</a></li>
+          <li><a href="https://www.linkedin.com/in/simon-liu145/" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/psymen145" rel="noopener">GitHub</a></li>
+        </ul>
+        <a class="btn" href="misc/SimonLiuResume.pdf" download>Download résumé (PDF)</a>
+      </article>
 
+      <article data-room="experience" hidden>
+        <p class="eyebrow">Second floor · The study</p>
+        <h2 tabindex="-1">Experience</h2>
+        <ol class="timeline">
+          <li>
+            <span class="when">Jan 2017 – Present</span>
+            <h3>Database Analyst / Python Developer</h3>
+            <p class="where">NYC Department of Health and Mental Hygiene</p>
+            <p>Developed a new SQL Server database for the Office of Vital Statistics. This database stores requests for birth and death records. After completion, I created a Django front end for the SQL Server database.</p>
+          </li>
+          <li>
+            <span class="when">Jan 2016 – Dec 2016</span>
+            <h3>Desktop Support Analyst</h3>
+            <p class="where">NYC Health and Hospitals</p>
+            <p>Travelled through the city to deploy hardware for NYC hospitals. Collaborated with personnel from each hospital to meet the hardware specifications for NYC’s new EMR, “EPIC”.</p>
+          </li>
+          <li>
+            <span class="when">Jul 2015 – Dec 2015</span>
+            <h3>Medical Record Field Technician</h3>
+            <p class="where">Enterprise Consulting Solutions</p>
+            <p>Travelled to medical practices to retrieve medical records for United Health Care patients. Did quality control to determine which records were needed by the medical record reviewers.</p>
+          </li>
+        </ol>
+      </article>
+
+      <article data-room="education" hidden>
+        <p class="eyebrow">Third floor · The library</p>
+        <h2 tabindex="-1">Education</h2>
+        <ol class="timeline">
+          <li>
+            <span class="when">Jan 2016 – Present</span>
+            <h3>Brooklyn College, CUNY</h3>
+            <p class="where">MA, Computer Science · GPA 3.84</p>
+          </li>
+          <li>
+            <span class="when">Aug 2010 – May 2014</span>
+            <h3>Stony Brook University</h3>
+            <p class="where">BS, Health Sciences</p>
+          </li>
+          <li>
+            <span class="when">Aug 2017</span>
+            <h3>Learning Tree</h3>
+            <p class="where">Introduction to Python</p>
+          </li>
+        </ol>
+      </article>
+
+      <article data-room="skills" hidden>
+        <p class="eyebrow">Garden level · The workshop</p>
+        <h2 tabindex="-1">Skills</h2>
+        <p>The tools on the pegboard.</p>
+        <h3>Languages &amp; frameworks</h3>
+        <ul class="tags">
+          <li>Python</li><li>Django</li><li>JavaScript</li><li>React</li><li>jQuery</li><li>Bootstrap</li><li>C++</li><li>C (systems programming)</li>
+        </ul>
+        <h3>Data &amp; systems</h3>
+        <ul class="tags">
+          <li>Microsoft SQL Server</li><li>PostgreSQL</li><li>Linux</li>
+        </ul>
+      </article>
+
+      <article data-room="projects" hidden>
+        <p class="eyebrow">Up on the roof</p>
+        <h2 tabindex="-1">Projects &amp; certifications</h2>
+        <ul class="cards">
+          <li><h3>Cryptocurrency site</h3><p>www.ethmember.com</p></li>
+          <li><h3>Database manager</h3><p>Stony Brook senior-year course project.</p></li>
+          <li><h3>Introduction to Python</h3><p>Learning Tree certification.</p></li>
+          <li><h3>BLS certified</h3><p>Basic Life Support.</p></li>
+        </ul>
+      </article>
+
+      <div class="panel-foot">
+        <button type="button" class="btn-ghost" data-stairs="down"></button>
+      </div>
+    </aside>
+  </section>
+
+  <div class="fade" id="fade" aria-hidden="true"></div>
+
+  <noscript>
+    <p class="noscript">This tour needs JavaScript. <a href="classic.html">View the plain resume instead.</a></p>
+  </noscript>
+
+  <script src="js/brownstone.js"></script>
+</body>
 </html>
