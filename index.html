@@ -166,290 +166,20 @@
     </header>
 
     <div class="stage">
-      <svg id="house-svg" viewBox="0 0 800 1040" preserveAspectRatio="xMidYMid meet" role="group" aria-label="Cutaway of the brownstone. Choose a room.">
-        <defs>
-          <linearGradient id="night" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#0c1129"/>
-            <stop offset=".25" stop-color="#1d2350"/>
-            <stop offset="1" stop-color="#151a33"/>
-          </linearGradient>
-          <linearGradient id="glow2" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#ffe6ad"/>
-            <stop offset="1" stop-color="#f3a84b"/>
-          </linearGradient>
-          <radialGradient id="lampglow">
-            <stop offset="0" stop-color="#ffd98a" stop-opacity=".5"/>
-            <stop offset="1" stop-color="#ffd98a" stop-opacity="0"/>
-          </radialGradient>
-          <radialGradient id="fireglow">
-            <stop offset="0" stop-color="#ff9a3c" stop-opacity=".45"/>
-            <stop offset="1" stop-color="#ff9a3c" stop-opacity="0"/>
-          </radialGradient>
-          <pattern id="brick2" width="24" height="12" patternUnits="userSpaceOnUse">
-            <rect width="24" height="12" fill="#7a3b2a"/>
-            <path d="M0 .5H24M0 6.5H24M6 0V6M18 6V12" stroke="#5c2b1e"/>
-          </pattern>
-          <pattern id="pegs" width="12" height="12" patternUnits="userSpaceOnUse">
-            <rect width="12" height="12" fill="#c8a978"/>
-            <circle cx="6" cy="6" r="1.2" fill="#9c7f52"/>
-          </pattern>
-          <clipPath id="portrait-clip"><rect x="236" y="16" width="58" height="46"/></clipPath>
-        </defs>
-
-        <rect x="-1200" y="-800" width="3200" height="1804" fill="url(#night)"/>
-        <g id="house-stars" fill="#fff"></g>
-        <circle cx="730" cy="22" r="14" fill="#f6efd9"/>
-
-        <!-- neighbour silhouettes -->
-        <rect x="-900" y="200" width="940" height="804" fill="#191c30"/>
-        <rect x="760" y="170" width="940" height="834" fill="#171a2d"/>
-        <g id="house-neighbour-windows"></g>
-        <rect x="-1200" y="1004" width="3200" height="600" fill="#1c140e"/>
-
-        <!-- shell -->
-        <rect x="40" y="216" width="720" height="16" fill="#3e2418"/>
-        <rect x="50" y="200" width="20" height="804" fill="#6b3f2b"/>
-        <rect x="730" y="200" width="20" height="804" fill="#6b3f2b"/>
-
-        <!-- ROOFTOP · projects -->
-        <g class="room" data-room="projects" transform="translate(70 60)" tabindex="0" role="button" aria-label="Rooftop: projects">
-          <rect class="room-bg" width="660" height="170" fill="#000" opacity="0"/>
-          <rect y="150" width="660" height="20" fill="#4a4040"/>
-          <!-- water tower -->
-          <g>
-            <path d="M548 150 L556 96 M612 150 L604 96 M580 150 V96" stroke="#2b2421" stroke-width="5"/>
-            <path d="M552 124 H608" stroke="#2b2421" stroke-width="3"/>
-            <rect x="540" y="38" width="80" height="60" fill="#7a5638"/>
-            <path d="M540 52H620M540 68H620M540 84H620" stroke="#4d3423" stroke-width="2"/>
-            <path d="M534 40 L580 6 L626 40 Z" fill="#5a3e2a"/>
-          </g>
-          <!-- string lights -->
-          <path d="M10 40 V150 M440 40 V150" stroke="#2b2421" stroke-width="4"/>
-          <path d="M10 42 Q118 82 225 46 Q332 82 440 42" fill="none" stroke="#2b2421" stroke-width="1.5"/>
-          <g id="bulbs"></g>
-          <!-- lounge -->
-          <g fill="#c98a4b">
-            <rect x="150" y="104" width="12" height="40" rx="3" transform="rotate(-14 156 124)"/>
-            <rect x="150" y="124" width="46" height="8" rx="2"/>
-            <rect x="152" y="132" width="4" height="18"/><rect x="190" y="132" width="4" height="18"/>
-            <rect x="290" y="104" width="12" height="40" rx="3" transform="rotate(14 296 124)"/>
-            <rect x="254" y="124" width="46" height="8" rx="2"/>
-            <rect x="256" y="132" width="4" height="18"/><rect x="294" y="132" width="4" height="18"/>
-          </g>
-          <rect x="206" y="118" width="38" height="6" fill="#3a3030"/>
-          <rect x="223" y="124" width="4" height="26" fill="#3a3030"/>
-          <rect x="216" y="106" width="8" height="12" rx="2" fill="#e9e3d6"/>
-          <!-- telescope -->
-          <path d="M470 150 L484 112 L498 150 M484 112 V150" stroke="#2b2421" stroke-width="3" fill="none"/>
-          <rect x="468" y="96" width="56" height="12" rx="4" fill="#d6d2c8" transform="rotate(-32 484 104)"/>
-          <!-- plants -->
-          <path d="M40 150 L36 126 H64 L60 150 Z" fill="#9c5a3a"/>
-          <circle cx="50" cy="112" r="16" fill="#3f6b3d"/><circle cx="40" cy="120" r="10" fill="#4f804b"/>
-          <path d="M80 150 L77 134 H99 L96 150 Z" fill="#9c5a3a"/>
-          <path d="M88 134 C80 110 84 100 88 96 C92 104 96 112 88 134" fill="#4f804b"/>
-          <text x="330" y="163.5" class="plaque">ROOFTOP · PROJECTS</text>
-          <rect class="room-hit" width="660" height="170" rx="4"/>
-        </g>
-        <rect x="50" y="230" width="700" height="14" fill="#2a1810"/>
-
-        <!-- LIBRARY · education -->
-        <g class="room" data-room="education" transform="translate(70 244)" tabindex="0" role="button" aria-label="Library: education">
-          <rect class="room-bg" width="660" height="176" fill="#2f4a3c"/>
-          <rect y="160" width="660" height="16" fill="#4a3020"/>
-          <g transform="translate(16 10)">
-            <rect width="220" height="150" fill="#4b2e1a"/>
-            <rect x="6" y="6" width="208" height="138" fill="#24160d"/>
-            <g class="books" data-seed="7"></g>
-            <rect x="6" y="40" width="208" height="4" fill="#4b2e1a"/>
-            <rect x="6" y="76" width="208" height="4" fill="#4b2e1a"/>
-            <rect x="6" y="112" width="208" height="4" fill="#4b2e1a"/>
-          </g>
-          <g transform="translate(424 10)">
-            <rect width="220" height="150" fill="#4b2e1a"/>
-            <rect x="6" y="6" width="208" height="138" fill="#24160d"/>
-            <g class="books" data-seed="21"></g>
-            <rect x="6" y="40" width="208" height="4" fill="#4b2e1a"/>
-            <rect x="6" y="76" width="208" height="4" fill="#4b2e1a"/>
-            <rect x="6" y="112" width="208" height="4" fill="#4b2e1a"/>
-          </g>
-          <!-- diploma -->
-          <rect x="296" y="22" width="80" height="58" fill="#e9dfc6" stroke="#b08d57" stroke-width="4"/>
-          <path d="M310 38 H362 M312 48 H360 M318 58 H354" stroke="#8a7a5a" stroke-width="2"/>
-          <circle cx="352" cy="68" r="6" fill="#a8322d"/>
-          <!-- lamp -->
-          <circle cx="262" cy="70" r="60" fill="url(#lampglow)"/>
-          <path d="M262 70 V158" stroke="#1d1d1d" stroke-width="3"/>
-          <ellipse cx="262" cy="159" rx="12" ry="3" fill="#1d1d1d"/>
-          <path d="M248 52 H276 L282 72 H242 Z" fill="#f3d9a0"/>
-          <!-- armchair -->
-          <rect x="290" y="94" width="96" height="50" rx="14" fill="#7d2b2b"/>
-          <rect x="282" y="124" width="112" height="24" rx="8" fill="#a03a3a"/>
-          <rect x="278" y="112" width="18" height="36" rx="7" fill="#8f3333"/>
-          <rect x="380" y="112" width="18" height="36" rx="7" fill="#8f3333"/>
-          <rect x="288" y="148" width="5" height="12" fill="#2a1a10"/><rect x="384" y="148" width="5" height="12" fill="#2a1a10"/>
-          <rect x="320" y="118" width="22" height="6" rx="1" fill="#2d5b8a" transform="rotate(-8 331 121)"/>
-          <text x="330" y="171" class="plaque">LIBRARY · EDUCATION</text>
-          <rect class="room-hit" width="660" height="176" rx="4"/>
-        </g>
-        <rect x="50" y="420" width="700" height="14" fill="#2a1810"/>
-
-        <!-- STUDY · experience -->
-        <g class="room" data-room="experience" transform="translate(70 434)" tabindex="0" role="button" aria-label="Study: work experience">
-          <rect class="room-bg" width="660" height="176" fill="#2e4157"/>
-          <rect y="160" width="660" height="16" fill="#4a3020"/>
-          <!-- window with skyline -->
-          <rect x="26" y="18" width="150" height="108" fill="#1c1c1c"/>
-          <rect x="32" y="24" width="138" height="96" fill="#101a35"/>
-          <path d="M32 120 V88 H50 V70 H64 V92 H80 V60 H96 V96 H112 V78 H130 V100 H146 V66 H160 V120 Z" fill="#0a0f20"/>
-          <g fill="#ffd27a"><rect x="84" y="68" width="3" height="3"/><rect x="90" y="80" width="3" height="3"/><rect x="150" y="76" width="3" height="3"/><rect x="54" y="78" width="3" height="3"/><rect x="118" y="88" width="3" height="3"/></g>
-          <path d="M101 24 V120 M32 72 H170" stroke="#1c1c1c" stroke-width="4"/>
-          <rect x="20" y="126" width="162" height="6" fill="#d8d2c4"/>
-          <!-- frames -->
-          <rect x="214" y="22" width="34" height="26" fill="#d8d2c4" stroke="#1c1c1c" stroke-width="3"/>
-          <rect x="256" y="16" width="44" height="32" fill="#9fb8c9" stroke="#1c1c1c" stroke-width="3"/>
-          <rect x="308" y="24" width="30" height="24" fill="#e2c28a" stroke="#1c1c1c" stroke-width="3"/>
-          <!-- desk -->
-          <rect x="250" y="108" width="270" height="10" fill="#6b4428"/>
-          <rect x="258" y="118" width="8" height="42" fill="#5a3820"/>
-          <rect x="440" y="118" width="74" height="42" fill="#5a3820"/>
-          <path d="M446 138 H508" stroke="#3e2615" stroke-width="2"/>
-          <circle cx="477" cy="128" r="2" fill="#d9b45a"/><circle cx="477" cy="148" r="2" fill="#d9b45a"/>
-          <!-- monitor -->
-          <rect x="340" y="40" width="128" height="62" rx="4" fill="#111"/>
-          <rect x="346" y="46" width="116" height="50" fill="#0d2236"/>
-          <g class="code">
-            <rect x="352" y="52" width="30" height="3" fill="#c792ea"/><rect x="386" y="52" width="40" height="3" fill="#82aaff"/>
-            <rect x="358" y="60" width="54" height="3" fill="#c3e88d"/>
-            <rect x="358" y="68" width="22" height="3" fill="#f78c6c"/><rect x="384" y="68" width="38" height="3" fill="#89ddff"/>
-            <rect x="358" y="76" width="46" height="3" fill="#c3e88d"/>
-            <rect x="352" y="84" width="18" height="3" fill="#c792ea"/><rect class="cursor" x="374" y="83" width="5" height="5" fill="#e6e6e6"/>
-          </g>
-          <rect x="398" y="102" width="12" height="6" fill="#222"/>
-          <rect x="500" y="94" width="12" height="14" rx="2" fill="#e9e3d6"/>
-          <path d="M512 98 Q518 101 512 104" stroke="#e9e3d6" stroke-width="2" fill="none"/>
-          <!-- chair -->
-          <rect x="296" y="78" width="40" height="46" rx="8" fill="#1f2a36"/>
-          <rect x="290" y="124" width="58" height="9" rx="4" fill="#26333f"/>
-          <rect x="316" y="133" width="5" height="18" fill="#111"/>
-          <path d="M298 156 H340" stroke="#111" stroke-width="4" stroke-linecap="round"/>
-          <!-- cabinet + plant -->
-          <rect x="560" y="70" width="70" height="90" fill="#7c858f"/>
-          <path d="M560 100 H630 M560 130 H630" stroke="#5b636c" stroke-width="2"/>
-          <rect x="586" y="84" width="18" height="4" fill="#3a4047"/><rect x="586" y="113" width="18" height="4" fill="#3a4047"/><rect x="586" y="143" width="18" height="4" fill="#3a4047"/>
-          <path d="M582 70 L586 54 H604 L608 70 Z" fill="#9c5a3a"/>
-          <path d="M595 54 C580 30 588 20 592 16 M595 54 C604 34 612 30 616 26 M595 54 C590 40 572 40 568 36" stroke="#4f804b" stroke-width="5" fill="none" stroke-linecap="round"/>
-          <!-- pendant -->
-          <path d="M404 0 V14" stroke="#111" stroke-width="2"/>
-          <path d="M394 14 H414 L418 24 H390 Z" fill="#1c1c1c"/>
-          <circle cx="404" cy="26" r="4" fill="#ffe6ad"/>
-          <text x="330" y="171" class="plaque">STUDY · EXPERIENCE</text>
-          <rect class="room-hit" width="660" height="176" rx="4"/>
-        </g>
-        <rect x="50" y="610" width="700" height="14" fill="#2a1810"/>
-
-        <!-- PARLOR · about -->
-        <g class="room" data-room="about" transform="translate(70 624)" tabindex="0" role="button" aria-label="Parlor: about me and contact">
-          <rect class="room-bg" width="660" height="176" fill="#5a3446"/>
-          <rect y="108" width="660" height="52" fill="#4a2a39"/>
-          <path d="M0 108 H660" stroke="#6e4559" stroke-width="3"/>
-          <rect y="160" width="660" height="16" fill="#4a3020"/>
-          <ellipse cx="300" cy="166" rx="190" ry="7" fill="#8a3d36"/>
-          <!-- fireplace -->
-          <circle cx="265" cy="130" r="90" fill="url(#fireglow)"/>
-          <rect x="196" y="72" width="138" height="8" fill="#eee7da"/>
-          <rect x="206" y="80" width="118" height="80" fill="#d9d0c0"/>
-          <path d="M234 160 V114 Q265 92 296 114 V160 Z" fill="#170d08"/>
-          <g class="flames">
-            <path class="flame" d="M250 156 C246 140 256 132 254 120 C264 130 270 140 266 156 Z" fill="#f08a2c"/>
-            <path class="flame f2" d="M262 156 C258 136 270 128 270 112 C282 126 284 142 278 156 Z" fill="#f6b13a"/>
-            <path class="flame f3" d="M256 156 C256 146 262 140 264 132 C270 142 272 150 270 156 Z" fill="#ffe08a"/>
-          </g>
-          <rect x="240" y="154" width="50" height="5" fill="#2b2b2b"/>
-          <!-- portrait -->
-          <rect x="230" y="10" width="70" height="58" fill="#c9a24a"/>
-          <rect x="236" y="16" width="58" height="46" fill="#2a1a12"/>
-          <image href="img/profile.png" x="236" y="10" width="58" height="58" preserveAspectRatio="xMidYMid slice" clip-path="url(#portrait-clip)"/>
-          <!-- sofa -->
-          <rect x="24" y="96" width="160" height="40" rx="12" fill="#2f5d62"/>
-          <rect x="18" y="122" width="172" height="28" rx="8" fill="#3a7177"/>
-          <rect x="12" y="108" width="20" height="42" rx="8" fill="#336a70"/>
-          <rect x="176" y="108" width="20" height="42" rx="8" fill="#336a70"/>
-          <rect x="22" y="150" width="6" height="10" fill="#2a1a10"/><rect x="180" y="150" width="6" height="10" fill="#2a1a10"/>
-          <rect x="44" y="104" width="30" height="22" rx="6" fill="#e2c28a" transform="rotate(-10 59 115)"/>
-          <!-- tall window -->
-          <rect x="398" y="10" width="96" height="146" fill="#1c1c1c"/>
-          <rect x="404" y="16" width="84" height="134" fill="#141c3a"/>
-          <path d="M446 16 V150 M404 82 H488" stroke="#1c1c1c" stroke-width="4"/>
-          <path d="M392 6 H500" stroke="#c9a24a" stroke-width="4"/>
-          <path d="M392 8 Q404 80 398 158 L388 158 Q392 80 386 8 Z" fill="#7d2b2b"/>
-          <path d="M500 8 Q488 80 494 158 L504 158 Q500 80 506 8 Z" fill="#7d2b2b"/>
-          <!-- side table + plant -->
-          <rect x="556" y="112" width="60" height="6" fill="#6b4428"/>
-          <rect x="582" y="118" width="6" height="42" fill="#6b4428"/>
-          <path d="M574 112 L577 96 H595 L598 112 Z" fill="#e9e3d6"/>
-          <path d="M586 96 C570 70 578 58 582 52 M586 96 C598 70 606 66 612 62 M586 96 C584 76 594 60 596 50" stroke="#4f804b" stroke-width="5" fill="none" stroke-linecap="round"/>
-          <!-- chandelier -->
-          <path d="M320 0 V10" stroke="#c9a24a" stroke-width="2"/>
-          <path d="M306 14 Q320 24 334 14" stroke="#c9a24a" stroke-width="3" fill="none"/>
-          <circle cx="306" cy="12" r="3" fill="#ffe6ad"/><circle cx="320" cy="20" r="3" fill="#ffe6ad"/><circle cx="334" cy="12" r="3" fill="#ffe6ad"/>
-          <text x="330" y="171" class="plaque">PARLOR · ABOUT ME</text>
-          <rect class="room-hit" width="660" height="176" rx="4"/>
-        </g>
-        <rect x="50" y="800" width="700" height="14" fill="#2a1810"/>
-
-        <!-- WORKSHOP · skills -->
-        <g class="room" data-room="skills" transform="translate(70 814)" tabindex="0" role="button" aria-label="Workshop: skills">
-          <rect class="room-bg" width="660" height="176" fill="url(#brick2)"/>
-          <rect y="160" width="660" height="16" fill="#3d3a38"/>
-          <!-- pegboard -->
-          <rect x="26" y="14" width="236" height="84" fill="url(#pegs)" stroke="#8b6a3e" stroke-width="3"/>
-          <g fill="#3b3f46">
-            <path d="M48 28 h8 v40 h-8z M42 22 h20 l-4 8 h-12z"/>
-            <path d="M80 26 h22 v10 h-7 v42 h-8 v-42 h-7z"/>
-            <path d="M124 24 a8 8 0 1 1 0 16 v38 h-6 v-38 a8 8 0 1 1 0 -16 v8 h6z"/>
-            <path d="M150 30 h50 l-6 26 h-38z"/>
-            <path d="M216 24 h6 v26 h4 v28 h-14 v-28 h4z"/>
-          </g>
-          <path d="M156 38 H192" stroke="#c8a978" stroke-width="2" stroke-dasharray="3 3"/>
-          <!-- workbench -->
-          <rect x="16" y="110" width="290" height="10" fill="#8b5a2b"/>
-          <rect x="24" y="120" width="8" height="40" fill="#6b4422"/><rect x="290" y="120" width="8" height="40" fill="#6b4422"/>
-          <rect x="24" y="146" width="274" height="5" fill="#6b4422"/>
-          <rect x="40" y="96" width="24" height="14" fill="#4a4f57"/><rect x="34" y="92" width="36" height="6" fill="#5b616a"/>
-          <!-- laptop -->
-          <path d="M170 110 L180 76 H246 L236 110 Z" fill="#2b2f36"/>
-          <path d="M176 106 L184 80 H240 L232 106 Z" fill="#1e3a4f"/>
-          <path d="M190 90 H214 M188 97 H226" stroke="#7fd1b9" stroke-width="2.5"/>
-          <rect x="160" y="108" width="90" height="4" fill="#4a4f57"/>
-          <!-- bulb -->
-          <path d="M380 0 V40" stroke="#111" stroke-width="2"/>
-          <circle cx="380" cy="46" r="40" fill="url(#lampglow)"/>
-          <circle cx="380" cy="46" r="7" fill="#ffe6ad"/>
-          <!-- bike -->
-          <g stroke="#cfd4da" stroke-width="3" fill="none">
-            <circle cx="350" cy="132" r="20"/><circle cx="420" cy="132" r="20"/>
-            <path d="M350 132 L372 102 H406 L420 132 M372 102 L386 132 L406 102 M386 132 H350 M402 94 L406 102 M366 96 H378"/>
-          </g>
-          <!-- server rack -->
-          <rect x="510" y="18" width="110" height="142" rx="4" fill="#1d1f24"/>
-          <g id="rack" ></g>
-          <text x="330" y="171" class="plaque">WORKSHOP · SKILLS</text>
-          <rect class="room-hit" width="660" height="176" rx="4"/>
-        </g>
-        <rect x="50" y="990" width="700" height="14" fill="#2a1810"/>
-      </svg>
+      <canvas id="house-canvas" tabindex="-1" aria-label="First-person view of the front hall. Drag to look around; use the room buttons to walk into a room."></canvas>
+      <div class="hotspots" id="hotspots"></div>
+      <p class="loading" id="loading">Turning on the lights…</p>
     </div>
 
     <nav class="room-nav" aria-label="Rooms">
-      <button type="button" data-go="projects">Rooftop</button>
+      <button type="button" data-go="about">Parlor</button>
       <button type="button" data-go="education">Library</button>
       <button type="button" data-go="experience">Study</button>
-      <button type="button" data-go="about">Parlor</button>
       <button type="button" data-go="skills">Workshop</button>
+      <button type="button" data-go="projects">Rooftop</button>
     </nav>
 
-    <p class="inside-hint" id="inside-hint">Welcome in. Pick a room to step inside.</p>
-    <div class="tooltip" id="tooltip" aria-hidden="true"></div>
+    <p class="inside-hint is-hidden" id="inside-hint">Drag to look around · click a doorway to walk in</p>
 
     <!-- ============ ROOM PANEL ============ -->
     <aside id="panel" class="panel" aria-label="Room details">
@@ -459,7 +189,7 @@
       </div>
 
       <article data-room="about" hidden>
-        <p class="eyebrow">Parlor floor</p>
+        <p class="eyebrow">The parlor</p>
         <h2 tabindex="-1">Hi, I’m Simon.</h2>
         <p class="lede">Database analyst and Python developer, based in Brooklyn.</p>
         <p>I am a database analyst/python developer at New York City Health and Mental Hygiene. I am in my last year at Brooklyn College’s Computer Science MA program.</p>
@@ -473,7 +203,7 @@
       </article>
 
       <article data-room="experience" hidden>
-        <p class="eyebrow">Second floor · The study</p>
+        <p class="eyebrow">Parlor floor · The study</p>
         <h2 tabindex="-1">Experience</h2>
         <ol class="timeline">
           <li>
@@ -498,7 +228,7 @@
       </article>
 
       <article data-room="education" hidden>
-        <p class="eyebrow">Third floor · The library</p>
+        <p class="eyebrow">Parlor floor · The library</p>
         <h2 tabindex="-1">Education</h2>
         <ol class="timeline">
           <li>
@@ -520,9 +250,9 @@
       </article>
 
       <article data-room="skills" hidden>
-        <p class="eyebrow">Garden level · The workshop</p>
+        <p class="eyebrow">Downstairs · The workshop</p>
         <h2 tabindex="-1">Skills</h2>
-        <p>The tools on the pegboard.</p>
+        <p>Everything on the chalkboard, and the tools on the pegboard.</p>
         <h3>Languages &amp; frameworks</h3>
         <ul class="tags">
           <li>Python</li><li>Django</li><li>JavaScript</li><li>React</li><li>jQuery</li><li>Bootstrap</li><li>C++</li><li>C (systems programming)</li>
@@ -556,6 +286,6 @@
     <p class="noscript">This tour needs JavaScript. <a href="classic.html">View the plain resume instead.</a></p>
   </noscript>
 
-  <script src="js/brownstone.js"></script>
+  <script type="module" src="js/brownstone.js"></script>
 </body>
 </html>

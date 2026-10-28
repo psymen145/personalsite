@@ -150,7 +150,7 @@ body.entering .street-title { opacity: 0; transition: opacity .3s; }
   justify-content: space-between;
   gap: 8px;
   padding: 0 12px;
-  background: linear-gradient(rgba(10, 13, 30, .85), rgba(10, 13, 30, 0));
+  background: linear-gradient(rgba(8, 6, 5, .7), rgba(8, 6, 5, 0));
 }
 .topbar-title {
   margin: 0;
@@ -179,64 +179,79 @@ body.entering .street-title { opacity: 0; transition: opacity .3s; }
 
 .stage {
   position: absolute;
-  top: 56px;
-  right: 0;
-  bottom: 64px;
-  left: 0;
+  inset: 0;
   transition: right .6s var(--ease), bottom .6s var(--ease);
 }
-#house-svg {
+#house-canvas {
   width: 100%;
   height: 100%;
   display: block;
-  overflow: visible;
-}
-
-.plaque {
-  font: 600 8.5px var(--sans);
-  letter-spacing: 2px;
-  fill: var(--brass);
-  text-anchor: middle;
-  pointer-events: none;
-}
-
-.room {
-  cursor: pointer;
+  cursor: grab;
+  touch-action: none;
   outline: none;
-  transition: opacity .5s, filter .3s;
 }
-.room-hit {
-  fill: none;
-  stroke: transparent;
-  stroke-width: 3;
-  transition: stroke .2s;
-}
-.room:hover { filter: brightness(1.15); }
-.room:hover .room-hit,
-.room:focus-visible .room-hit { stroke: var(--glow); }
-.room:focus-visible .room-hit { stroke-dasharray: 8 5; }
-.room.is-selected .room-hit { stroke: transparent; }
-body.panel-open .room:not(.is-selected) { opacity: .3; }
-body.panel-open .room.is-selected { filter: none; }
 
-/* ambient animation */
-.flame {
-  transform-box: fill-box;
-  transform-origin: 50% 100%;
-  animation: flicker 1.2s ease-in-out infinite alternate;
+.loading[hidden] { display: none; }
+.loading {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 16px;
+  text-align: center;
+  font: 400 22px var(--serif);
+  color: var(--glow);
 }
-.flame.f2 { animation-duration: .9s; animation-delay: -.3s; }
-.flame.f3 { animation-duration: .7s; animation-delay: -.5s; }
-@keyframes flicker {
-  0% { transform: scale(1, .86) skewX(-3deg); }
-  50% { transform: scale(.95, 1.06) skewX(2deg); }
-  100% { transform: scale(1.04, .94) skewX(-1deg); }
+
+/* floating doorway labels, positioned from the 3D scene each frame */
+.hotspots {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .35s;
 }
-.cursor { animation: blink 1s steps(1) infinite; }
-.led { animation: blink 1.4s steps(1) infinite; }
-.bulb { animation: twinkle 3s ease-in-out infinite; }
-@keyframes blink { 50% { opacity: .15; } }
-@keyframes twinkle { 50% { opacity: .55; } }
+.hotspots.is-visible { opacity: 1; }
+.hotspots.is-visible .hotspot { pointer-events: auto; }
+.hotspot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: -18px 0 0 -10px;
+  padding: 6px 12px 6px 8px;
+  border: 1px solid rgba(255, 217, 138, .45);
+  border-radius: 999px;
+  background: rgba(18, 12, 10, .62);
+  color: var(--paper);
+  text-align: left;
+  backdrop-filter: blur(4px);
+  transition: background .2s, border-color .2s, opacity .2s;
+  will-change: transform;
+}
+.hotspot.is-off { opacity: 0; pointer-events: none !important; }
+.hotspot-dot {
+  flex: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--glow);
+  animation: pulse 1.8s ease-out infinite;
+}
+.hotspot-text { display: grid; line-height: 1.15; }
+.hotspot strong { font-size: 14px; font-weight: 600; }
+.hotspot small { font-size: 11px; opacity: .75; }
+.hotspot:hover,
+.hotspot.is-hot,
+.hotspot:focus-visible {
+  background: var(--glow);
+  border-color: var(--glow);
+  color: var(--ink);
+  outline: none;
+}
 
 .room-nav {
   position: absolute;
@@ -249,6 +264,7 @@ body.panel-open .room.is-selected { filter: none; }
   padding: 0 12px;
   overflow-x: auto;
   scrollbar-width: none;
+  background: linear-gradient(rgba(8, 6, 5, 0), rgba(8, 6, 5, .6));
   transition: right .6s var(--ease), opacity .3s;
 }
 .room-nav button {
@@ -279,23 +295,6 @@ body.panel-open .room.is-selected { filter: none; }
   transition: opacity .5s;
 }
 .inside-hint.is-hidden { opacity: 0; }
-
-.tooltip {
-  position: fixed;
-  z-index: 20;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: var(--paper);
-  color: var(--ink);
-  font-size: 13px;
-  font-weight: 600;
-  pointer-events: none;
-  opacity: 0;
-  transform: translate(-50%, calc(-100% - 14px));
-  transition: opacity .15s;
-  white-space: nowrap;
-}
-.tooltip.is-visible { opacity: 1; }
 
 /* ---------- panel ---------- */
 
@@ -428,6 +427,7 @@ body.panel-open .inside-hint { opacity: 0; }
   transition: opacity .45s ease;
 }
 .fade.is-on { opacity: 1; }
+.fade.is-dark { background: #050403; }
 
 .noscript {
   position: fixed;
@@ -445,6 +445,9 @@ body.panel-open .inside-hint { opacity: 0; }
   .topbar-title { font-size: 17px; }
   .topbar .btn-ghost { padding: 6px 10px; font-size: 13px; }
   .room-nav { gap: 4px; }
+  .hotspot { padding: 5px 10px 5px 7px; }
+  .hotspot strong { font-size: 13px; }
+  .hotspot small { display: none; }
   .room-nav button { padding: 7px 9px; font-size: 13px; }
   .inside-hint { white-space: normal; text-align: center; width: max-content; max-width: calc(100% - 32px); }
 
