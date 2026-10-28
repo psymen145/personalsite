@@ -1,0 +1,29 @@
+# One-off diagnostic: fetch the live GitHub Pages site and report what it serves.
+name: Check live site
+
+on:
+  push:
+    branches: [master]
+    paths: [.github/workflows/check-site.yml]
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch the site and its assets
+        run: |
+          base=https://psymen145.github.io/personalsite
+          echo "== redirects for $base/"
+          curl -sSIL "$base/" | grep -iE '^(HTTP|location|server|content-type)'
+          echo "== page title"
+          curl -sSL "$base/" | grep -o '<title>[^<]*' || echo "(no title)"
+          echo "== assets"
+          for path in css/brownstone.css js/brownstone.js js/house3d.js vendor/three/three.module.min.js img/profile.png classic.html; do
+            printf '%s  %s  %s\n' "$(curl -sSL -o /dev/null -w '%{http_code}' "$base/$path")" \
+              "$(curl -sSIL "$base/$path" | grep -i '^content-type' | tail -1 | tr -d '\r')" "$path"
+          done
+          echo "== bare user domain"
+          curl -sSI https://psymen145.github.io/ | head -1
+          echo "== old domain"
+          curl -sSI -m 10 https://www.psymen.me/ 2>&1 | head -1 || true
